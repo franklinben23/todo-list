@@ -34,7 +34,9 @@ $ git clone git@github.com:franklinben23/todo-list.git
 
 4- to run the project you'll need to use the following command in your terminal to set up the node modules.
 
-$ npm i
+$ npm run build
+
+5- after opening the project in the localHost using live server, you might have to click the dist folder to see the project.
 
 ## 🤝 Contributing
 
