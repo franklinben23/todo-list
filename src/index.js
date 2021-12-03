@@ -1,5 +1,4 @@
 import './style.css';
-import { updateToTrue, updateToFalse } from './updateStatus.js';
 
 const taskList = document.querySelector('.task-list');
 
