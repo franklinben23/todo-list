@@ -1,5 +1,6 @@
 import './style.css';
 import { updateToTrue, updateToFalse } from './updateStatus.js';
+import { setIndex } from './scripts.js'
 
 const taskList = document.querySelector('.task-list');
 const taskForm = document.getElementById('task-form');
@@ -34,10 +35,15 @@ const render = () => {
     const label = document.createElement('label');
     label.classList.add('task-label');
 
+    const rmIcon =  document.createElement('i');
+    rmIcon.classList.add('fas')
+    rmIcon.classList.add('fa-trash-alt')
+
     label.innerHTML = task.name;
 
     li.append(checkbox);
     li.append(label);
+    li.append(rmIcon)
     taskList.appendChild(li);
 
     checkbox.addEventListener('change', (e) => {
@@ -52,15 +58,16 @@ const render = () => {
         record();
       }
     });
+
+    rmIcon.addEventListener('click', (e) => {
+      e.target.parentNode.remove();
+      const index = list.indexOf(task);
+      list.splice(index, 1);
+      setIndex(list);
+      record();
+    });
   });
 };
-
-function setIndex(array) {
-  for (let i = 0; i < array.length; i += 1) {
-    const element = array[i];
-    element.id = parseInt([i], 10) + 1;
-  }
-}
 
 taskForm.addEventListener('submit', (e) => {
   e.preventDefault();

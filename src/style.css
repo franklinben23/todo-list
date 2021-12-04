@@ -17,8 +17,19 @@ body {
   padding: 2.5px 0 2.5px 0;
   border: 1px lightgray solid;
   margin-left: -40px;
+  display: flex;
+  position: relative;
 }
 
 .crossed {
   text-decoration: line-through;
+}
+
+.fas {
+  position: absolute;
+  right: 10px;
+}
+
+.fas:hover {
+  cursor: pointer;
 }
