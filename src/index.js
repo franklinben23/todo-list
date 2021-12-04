@@ -1,6 +1,6 @@
 import './style.css';
 import { updateToTrue, updateToFalse } from './updateStatus.js';
-import { setIndex } from './scripts.js'
+import { setIndex } from './scripts.js';
 
 const taskList = document.querySelector('.task-list');
 const taskForm = document.getElementById('task-form');
@@ -8,9 +8,7 @@ const taskInput = document.getElementById('form-input');
 
 const list = JSON.parse(localStorage.getItem('list')) || [];
 
-const create = (name) => {
-  return { id: 0, name, completed: false }
-}
+const create = (name) => ({ id: 0, name, completed: false });
 
 const record = () => {
   localStorage.setItem('list', JSON.stringify(list));
@@ -18,12 +16,12 @@ const record = () => {
 
 const removeElement = (element) => {
   while (element.firstChild) {
-    element.removeChild(element.firstChild)
+    element.removeChild(element.firstChild);
   }
 };
 
 const render = () => {
-  removeElement(taskList)
+  removeElement(taskList);
   list.forEach((task) => {
     const li = document.createElement('li');
     li.classList.add('task');
@@ -35,15 +33,20 @@ const render = () => {
     const label = document.createElement('label');
     label.classList.add('task-label');
 
-    const rmIcon =  document.createElement('i');
-    rmIcon.classList.add('fas')
-    rmIcon.classList.add('fa-trash-alt')
+    const rmIcon = document.createElement('i');
+    rmIcon.classList.add('fas');
+    rmIcon.classList.add('fa-trash-alt');
+
+    const editIcon = document.createElement('i');
+    editIcon.classList.add('fas');
+    editIcon.classList.add('fa-edit')
 
     label.innerHTML = task.name;
 
     li.append(checkbox);
     li.append(label);
-    li.append(rmIcon)
+    li.append(rmIcon);
+    li.append(editIcon);
     taskList.appendChild(li);
 
     checkbox.addEventListener('change', (e) => {
@@ -65,6 +68,27 @@ const render = () => {
       list.splice(index, 1);
       setIndex(list);
       record();
+    });
+
+    editIcon.addEventListener('click', () => {
+      const newInput = document.createElement('input');
+      const saveBtn = document.createElement('button');
+      // editInput.classList.add('edit');
+      newInput.type = 'text';
+      newInput.placeholder = 'Enter new task name';
+      saveBtn.type = 'submit';
+      saveBtn.innerText = 'Save';
+      label.innerText = '';
+      li.removeChild(editIcon);
+      li.removeChild(rmIcon);
+      li.removeChild(checkbox);
+      li.appendChild(newInput);
+      li.appendChild(saveBtn);
+      saveBtn.addEventListener('click', () => {
+        task.name = newInput.value;
+        record();
+        render();
+      });
     });
   });
 };

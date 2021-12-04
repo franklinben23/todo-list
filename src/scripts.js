@@ -5,4 +5,4 @@ const setIndex = (array) => {
   }
 };
 
-export { setIndex }
+export { setIndex };
