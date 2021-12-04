@@ -15,6 +15,10 @@ const record = () => {
   localStorage.setItem('list', JSON.stringify(list));
 };
 
+const checkedBox = (element) => {
+  element.checked = true;
+};
+
 const render = () => {
   removeElement(taskList);
   list.forEach((task) => {
@@ -43,6 +47,11 @@ const render = () => {
     li.append(rmIcon);
     li.append(editIcon);
     taskList.appendChild(li);
+
+    if (task.completed === true) {
+      li.classList.add('crossed');
+      checkedBox(checkbox);
+    }
 
     checkbox.addEventListener('change', (e) => {
       const taskAtHand = e.target.parentNode;
