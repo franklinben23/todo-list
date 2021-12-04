@@ -18,8 +18,8 @@ const render = () => {
 
     label.innerHTML = task.name;
 
-    li.appendChild(checkbox);
-    li.appendChild(label);
+    li.append(checkbox);
+    li.append(label);
     taskList.appendChild(li);
   });
 };

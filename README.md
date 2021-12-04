@@ -38,6 +38,8 @@ $ npm run build
 
 5- after opening the project in the localHost using live server, you might have to click the dist folder to see the project.
 
+6- for development only purposes: $ npm run serve in the terminal.
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
