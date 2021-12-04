@@ -29,7 +29,8 @@ body {
   position: absolute;
 }
 
-.fas:hover {
+.fas:hover,
+.remove-bar:hover {
   cursor: pointer;
 }
 
@@ -39,4 +40,10 @@ body {
 
 .fa-edit {
   right: 40px;
+}
+
+.remove-bar h4 {
+  border: black solid 1px;
+  border-radius: 10px;
+  text-align: justify;
 }

@@ -1,23 +1,18 @@
 import './style.css';
 import { updateToTrue, updateToFalse } from './updateStatus.js';
-import { setIndex } from './scripts.js';
+import {
+  setIndex, clearedList, create, removeElement,
+} from './scripts.js';
 
 const taskList = document.querySelector('.task-list');
 const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('form-input');
+const clearList = document.querySelector('.to-rm');
 
-const list = JSON.parse(localStorage.getItem('list')) || [];
-
-const create = (name) => ({ id: 0, name, completed: false });
+let list = JSON.parse(localStorage.getItem('list')) || [];
 
 const record = () => {
   localStorage.setItem('list', JSON.stringify(list));
-};
-
-const removeElement = (element) => {
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
-  }
 };
 
 const render = () => {
@@ -39,7 +34,7 @@ const render = () => {
 
     const editIcon = document.createElement('i');
     editIcon.classList.add('fas');
-    editIcon.classList.add('fa-edit')
+    editIcon.classList.add('fa-edit');
 
     label.innerHTML = task.name;
 
@@ -73,7 +68,6 @@ const render = () => {
     editIcon.addEventListener('click', () => {
       const newInput = document.createElement('input');
       const saveBtn = document.createElement('button');
-      // editInput.classList.add('edit');
       newInput.type = 'text';
       newInput.placeholder = 'Enter new task name';
       saveBtn.type = 'submit';
@@ -100,6 +94,13 @@ taskForm.addEventListener('submit', (e) => {
   const task = create(taskName);
   taskInput.value = null;
   list.push(task);
+  setIndex(list);
+  record();
+  render();
+});
+
+clearList.addEventListener('click', () => {
+  list = clearedList(list);
   setIndex(list);
   record();
   render();

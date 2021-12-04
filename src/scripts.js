@@ -5,4 +5,19 @@ const setIndex = (array) => {
   }
 };
 
-export { setIndex };
+const clearedList = (array) => {
+  const clearedArr = array.filter((object) => object.completed === false);
+  return clearedArr;
+};
+
+const create = (name) => ({ id: 0, name, completed: false });
+
+const removeElement = (element) => {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+};
+
+export {
+  setIndex, clearedList, create, removeElement,
+};
