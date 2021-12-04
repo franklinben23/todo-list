@@ -2,14 +2,27 @@ import './style.css';
 import { updateToTrue, updateToFalse } from './updateStatus.js';
 
 const taskList = document.querySelector('.task-list');
+const taskForm = document.getElementById('task-form');
+const taskInput = document.getElementById('form-input');
 
-const list = [{ name: 'wash the dishes', id: 1, completed: false }, { name: 'walk the dog', id: 2, completed: false }, { name: 'dry the clothes', id: 3, completed: false }];
+const list = JSON.parse(localStorage.getItem('list')) || [];
+
+const create = (name) => {
+  return { id: 0, name, completed: false }
+}
 
 const record = () => {
   localStorage.setItem('list', JSON.stringify(list));
 };
 
+const removeElement = (element) => {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild)
+  }
+};
+
 const render = () => {
+  removeElement(taskList)
   list.forEach((task) => {
     const li = document.createElement('li');
     li.classList.add('task');
@@ -41,5 +54,24 @@ const render = () => {
     });
   });
 };
+
+function setIndex(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    const element = array[i];
+    element.id = parseInt([i], 10) + 1;
+  }
+}
+
+taskForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const taskName = taskInput.value;
+  if (taskName === '') return;
+  const task = create(taskName);
+  taskInput.value = null;
+  list.push(task);
+  setIndex(list);
+  record();
+  render();
+});
 
 render();
