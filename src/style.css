@@ -18,3 +18,7 @@ body {
   border: 1px lightgray solid;
   margin-left: -40px;
 }
+
+.crossed {
+  text-decoration: line-through;
+}
