@@ -17,8 +17,33 @@ body {
   padding: 2.5px 0 2.5px 0;
   border: 1px lightgray solid;
   margin-left: -40px;
+  display: flex;
+  position: relative;
 }
 
 .crossed {
   text-decoration: line-through;
+}
+
+.fas {
+  position: absolute;
+}
+
+.fas:hover,
+.remove-bar:hover {
+  cursor: pointer;
+}
+
+.fa-trash-alt {
+  right: 10px;
+}
+
+.fa-edit {
+  right: 40px;
+}
+
+.remove-bar h4 {
+  border: black solid 1px;
+  border-radius: 10px;
+  text-align: justify;
 }
