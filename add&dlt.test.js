@@ -15,9 +15,15 @@ describe('manipulates the list upon interaction', () => {
     expect(secondEl.id).toBe(2)
   });
 
-  test('filters out completed tasks when called', () =>{
+  test('filters out completed tasks when called', () => {
     const clearedArr = clearedList(testArr);
     expect(clearedArr.length).toBe(2)
   });
 
+  test('creates a new item in the array', () => {
+      const newEl = create('test name');
+      testArr.push(newEl);
+      const lastElement = testArr.slice(-1); 
+      expect(lastElement.name).toBe('test name');
+  });
 });
