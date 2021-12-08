@@ -23,7 +23,8 @@ describe('manipulates the list upon interaction', () => {
   test('creates a new item in the array', () => {
       const newEl = create('test name');
       testArr.push(newEl);
-      const lastElement = testArr.slice(-1); 
+      const lastElement = testArr[testArr.length - 1];
+      console.log(lastElement)
       expect(lastElement.name).toBe('test name');
   });
 });
