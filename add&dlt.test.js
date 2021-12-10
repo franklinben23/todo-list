@@ -1,4 +1,6 @@
-import { create, deleteTask, clearedList } from './src/scripts';
+import {
+  create, deleteTask, clearedList, editFunc,
+} from './src/scripts';
 import { updateToTrue } from './src/updateStatus';
 import { render } from './__mocks__/index';
 
@@ -20,7 +22,6 @@ describe('manipulates the list upon interaction', () => {
   test('Add one new item to the list', () => {
     render();
     const list1 = document.querySelectorAll('.task-list');
-    console.log(list1);
     expect(list1).toHaveLength(1);
   });
 
@@ -33,21 +34,36 @@ describe('manipulates the list upon interaction', () => {
     deleteTask(isolatedArr, 2);
     expect(isolatedArr.length).toBe(2);
   });
+});
+
+describe('Status and content updates', () => {
+  const testArr2 = [
+    { id: 0, name: 'first element', completed: true },
+    { id: 0, name: 'second element', completed: false },
+    { id: 0, name: 'third element', completed: true },
+    { id: 0, name: 'fourth element', completed: false },
+  ];
 
   test('filters out completed tasks when called', () => {
-    const testArr = [
-      { id: 0, name: 'first element', completed: true },
-      { id: 0, name: 'second element', completed: false },
-      { id: 0, name: 'third element', completed: true },
-      { id: 0, name: 'fourth element', completed: false },
-    ];
-    const clearedArr = clearedList(testArr);
-    expect(clearedArr.length).toBe(2)
+    const clearedArr = clearedList(testArr2);
+    expect(clearedArr.length).toBe(2);
   });
 
-  test('uptates task to completed', () => {
-    const task = testArr[1];
+  test('updates task to completed', () => {
+    const task = testArr2[1];
     updateToTrue(task);
     expect(task.completed).toBe(true);
+  });
+
+  test('edits the task name', () => {
+    document.body.innerHTML = '<div>'
+    + '  <ul class="task-list">'
+    + '   <li class="task-item">'
+    + '     <label>wash the dishes</label>'
+    + '   </li>'
+    + '  </ul>'
+    + '</div>';
+    const newTask = editFunc('walk the dog');
+    expect(newTask).toBe('walk the dog');
   });
 });

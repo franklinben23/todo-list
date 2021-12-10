@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1639170619806" clover="3.2.0">
-  <project timestamp="1639170619807" name="All files">
-    <metrics statements="17" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="5" elements="25" coveredelements="16" complexity="0" loc="17" ncloc="17" packages="1" files="2" classes="2"/>
-    <file name="scripts.js" path="/home/angela/Documents/JS/todo-list/src/scripts.js">
-      <metrics statements="13" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+<coverage generated="1639175480173" clover="3.2.0">
+  <project timestamp="1639175480173" name="All files">
+    <metrics statements="22" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="6" elements="31" coveredelements="22" complexity="0" loc="22" ncloc="22" packages="1" files="2" classes="2"/>
+    <file name="scripts.js" path="/home/franklin/Desktop/todo-list/src/scripts.js">
+      <metrics statements="18" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="0" type="stmt"/>
       <line num="3" count="0" type="stmt"/>
@@ -17,8 +17,13 @@
       <line num="17" count="0" type="stmt"/>
       <line num="21" count="1" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
     </file>
-    <file name="updateStatus.js" path="/home/angela/Documents/JS/todo-list/src/updateStatus.js">
+    <file name="updateStatus.js" path="/home/franklin/Desktop/todo-list/src/updateStatus.js">
       <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>

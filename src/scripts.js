@@ -22,6 +22,13 @@ const deleteTask = (array, index) => {
   array.splice(index, 1);
 };
 
+const editFunc = (newName) => {
+  let label = document.querySelector('label').innerHTML;
+  label = '';
+  label = newName;
+  return label;
+};
+
 export {
-  setIndex, clearedList, create, removeElement, deleteTask,
+  setIndex, clearedList, create, removeElement, deleteTask, editFunc,
 };
