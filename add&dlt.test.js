@@ -1,4 +1,4 @@
-import { create, deleteTask } from './src/scripts';
+import { create, deleteTask, clearedList } from './src/scripts';
 import { render } from './__mocks__/index';
 
 describe('manipulates the list upon interaction', () => {
@@ -32,4 +32,9 @@ describe('manipulates the list upon interaction', () => {
     deleteTask(isolatedArr, 2);
     expect(isolatedArr.length).toBe(2);
   });
+
+  test('filters out completed tasks when called', () => {
+    const clearedArr = clearedList(testArr);
+    expect(clearedArr.length).toBe(2)
+   });
 });
