@@ -34,7 +34,13 @@ describe('manipulates the list upon interaction', () => {
   });
 
   test('filters out completed tasks when called', () => {
+    const testArr = [
+      { id: 0, name: 'first element', completed: true },
+      { id: 0, name: 'second element', completed: false },
+      { id: 0, name: 'third element', completed: true },
+      { id: 0, name: 'fourth element', completed: false },
+    ];
     const clearedArr = clearedList(testArr);
     expect(clearedArr.length).toBe(2)
-   });
+  });
 });
