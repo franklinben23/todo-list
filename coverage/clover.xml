@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1639117212360" clover="3.2.0">
+  <project timestamp="1639117212360" name="All files">
+    <metrics statements="13" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2" elements="19" coveredelements="8" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
+    <file name="scripts.js" path="/home/franklin/Desktop/todo-list/src/scripts.js">
+      <metrics statements="13" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="17" count="0" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

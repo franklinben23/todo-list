@@ -1,9 +1,9 @@
-function updateToTrue(task) {
+const updateToTrue = (task) => {
   task.completed = true;
-}
+};
 
-function updateToFalse(task) {
+const updateToFalse = (task) => {
   task.completed = false;
-}
+};
 
 export { updateToTrue, updateToFalse };

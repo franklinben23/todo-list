@@ -4,7 +4,7 @@
   "description": "this is an excersice to make the  basic webpack setup, can also serve as a boilerplate for future projects.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage --env=jsdom",
     "build": "webpack",
     "serve": "webpack serve",
     "start": "webpack-dev-server --open"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/franklinben23/webpack-boiler#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.5.1",
     "eslint": "^7.32.0",
@@ -28,6 +29,8 @@
     "eslint-plugin-import": "^2.25.3",
     "hint": "^6.1.9",
     "html-webpack-plugin": "^5.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.3",
     "style-loader": "^3.3.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
@@ -35,5 +38,11 @@
   },
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }
