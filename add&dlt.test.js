@@ -1,4 +1,5 @@
 import { create, deleteTask, clearedList } from './src/scripts';
+import { updateToTrue } from './src/updateStatus';
 import { render } from './__mocks__/index';
 
 describe('manipulates the list upon interaction', () => {
@@ -42,5 +43,11 @@ describe('manipulates the list upon interaction', () => {
     ];
     const clearedArr = clearedList(testArr);
     expect(clearedArr.length).toBe(2)
+  });
+
+  test('uptates task to completed', () => {
+    const task = testArr[1];
+    updateToTrue(task);
+    expect(task.completed).toBe(true);
   });
 });
