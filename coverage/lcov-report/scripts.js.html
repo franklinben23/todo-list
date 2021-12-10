@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/14</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.81% </span>
+                <span class="strong">46.15% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/11</span>
+                <span class='fraction'>6/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -85,16 +85,20 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -105,18 +109,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const setIndex = (array) =&gt; {
-  for (let i = 0; i &lt; array.length; i += 1) {
-    const element = array[i];
-    element.id = parseInt([i], 10) + 1;
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const setIndex = <span class="fstat-no" title="function not covered" >(a</span>rray) =&gt; {
+<span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; array.length; i += 1) {</span>
+    const element = <span class="cstat-no" title="statement not covered" >array[i];</span>
+<span class="cstat-no" title="statement not covered" >    element.id = parseInt([i], 10) + 1;</span>
   }
 };
 &nbsp;
-const clearedList = (array) =&gt; {
-  const clearedArr = array.filter((object) =&gt; object.completed === false);
-  return clearedArr;
+const clearedList = <span class="fstat-no" title="function not covered" >(a</span>rray) =&gt; {
+  const clearedArr = <span class="cstat-no" title="statement not covered" >array.filter(<span class="fstat-no" title="function not covered" >(o</span>bject) =&gt; <span class="cstat-no" title="statement not covered" >object.completed === false)</span>;</span>
+<span class="cstat-no" title="statement not covered" >  return clearedArr;</span>
 };
 &nbsp;
 const create = (name) =&gt; ({ id: 0, name, completed: false });
@@ -127,8 +135,12 @@ const removeElement = <span class="fstat-no" title="function not covered" >(e</s
   }
 };
 &nbsp;
+const deleteTask = (array, index) =&gt; {
+  array.splice(index, 1);
+}
+&nbsp;
 export {
-  setIndex, clearedList, create, removeElement,
+  setIndex, clearedList, create, removeElement, deleteTask
 };</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -136,7 +148,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Wed Dec 08 2021 19:18:14 GMT-0400 (Atlantic Standard Time)
+                at Fri Dec 10 2021 02:20:12 GMT-0400 (Atlantic Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>

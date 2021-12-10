@@ -18,6 +18,10 @@ const removeElement = (element) => {
   }
 };
 
+const deleteTask = (array, index) => {
+  array.splice(index, 1);
+};
+
 export {
-  setIndex, clearedList, create, removeElement,
+  setIndex, clearedList, create, removeElement, deleteTask,
 };

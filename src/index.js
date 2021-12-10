@@ -6,8 +6,8 @@ import {
 
 const taskList = document.querySelector('.task-list');
 const taskForm = document.getElementById('task-form');
-const taskInput = document.getElementById('form-input');
 const clearList = document.querySelector('.to-rm');
+const taskInput = document.getElementById('form-input');
 
 let list = JSON.parse(localStorage.getItem('list')) || [];
 
