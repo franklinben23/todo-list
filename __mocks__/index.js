@@ -39,49 +39,7 @@ const render = () => {
 
     if (task.completed === true) {
       li.classList.add('crossed');
-      // checkedBox(checkbox);
     }
-
-    // checkbox.addEventListener('change', (e) => {
-    //   const taskAtHand = e.target.parentNode;
-    //   if (e.target.checked === true) {
-    //     updateToTrue(task);
-    //     taskAtHand.classList.add('crossed');
-    //     record();
-    //   } else {
-    //     updateToFalse(task);
-    //     taskAtHand.classList.remove('crossed');
-    //     record();
-    //   }
-    // });
-
-    // rmIcon.addEventListener('click', (e) => {
-    //   e.target.parentNode.remove();
-    //   const index = list.indexOf(task);
-    //   list.splice(index, 1);
-    //   setIndex(list);
-    //   record();
-    // });
-
-    // editIcon.addEventListener('click', () => {
-    //   const newInput = document.createElement('input');
-    //   const saveBtn = document.createElement('button');
-    //   newInput.type = 'text';
-    //   newInput.placeholder = 'Enter new task name';
-    //   saveBtn.type = 'submit';
-    //   saveBtn.innerText = 'Save';
-    //   label.innerText = '';
-    //   li.removeChild(editIcon);
-    //   li.removeChild(rmIcon);
-    //   li.removeChild(checkbox);
-    //   li.appendChild(newInput);
-    //   li.appendChild(saveBtn);
-    //   saveBtn.addEventListener('click', () => {
-    //     task.name = newInput.value;
-    //     record();
-    //     render();
-    //   });
-    // });
   });
 };
 /* eslint-disable */
